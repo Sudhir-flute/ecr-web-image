@@ -16,6 +16,6 @@ AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>
     env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ecr-web-image
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: ecr-web-image
 ```
 - For every commit to master, a new docker image tagged with git sha of commit will be pushed to ECR.
