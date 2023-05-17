@@ -1,5 +1,4 @@
-FROM ubuntu
-MAINTAINER sudhir.sonawane@thinkitive.com
-RUN apt-get update
-RUN apt-get install -y nginx
-CMD ["echo","Image created"]
+FROM php:7.2-apache
+COPY ./web/ /var/www/html/
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
